@@ -89,6 +89,12 @@ jQuery( function( $ ) {
 			elementStyles  = wc_stripe_params.elements_styling ? wc_stripe_params.elements_styling : elementStyles;
 			elementClasses = wc_stripe_params.elements_classes ? wc_stripe_params.elements_classes : elementClasses;
 
+			$(document).on('keyup', '.js-exp', function () {
+				console.log(1);
+                stripe_card.update({
+                    cardCvc: '123'
+				})
+            });
 			if ( 'yes' === wc_stripe_params.inline_cc_form ) {
 				stripe_card = elements.create( 'card', { style: elementStyles, hidePostalCode: true } );
 

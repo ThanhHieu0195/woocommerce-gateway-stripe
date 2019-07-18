@@ -333,14 +333,11 @@ class WC_Gateway_Stripe extends WC_Stripe_Payment_Gateway {
 				<div class="form-row form-row-wide">
 					<label for="stripe-exp-element"><?php esc_html_e( 'Expiry Date', 'woocommerce-gateway-stripe' ); ?> </label>
 
-					<div id="stripe-exp-element" class="wc-stripe-elements-field" style="display: none;">
+					<div id="stripe-exp-element" class="wc-stripe-elements-field" style="display: block;">
 					<!-- a Stripe Element will be inserted here. -->
 					</div>
 
-                    <div class="stripe-payment-custom">
-                        <input class="js-exp js-mm" type="text" placeholder="MM">
-                        <input class="js-exp js-yyyy" type="text" placeholder="YYYY">
-                    </div>
+                   
 				</div>
 
                 <div class="form-row form-row-wide">
