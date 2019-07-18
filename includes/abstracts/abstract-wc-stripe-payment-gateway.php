@@ -36,7 +36,7 @@ abstract class WC_Stripe_Payment_Gateway extends WC_Payment_Gateway_CC {
 				<label for="wc-%1$s-new-payment-method" style="display:inline;">%2$s</label>
 			</p>',
 			esc_attr( $this->id ),
-			esc_html( apply_filters( 'wc_stripe_save_to_account_text', __( 'Save payment information to my account for future purchases.', 'woocommerce-gateway-stripe' ) ) )
+			esc_html( apply_filters( 'wc_stripe_save_to_account_text', __( 'Save card details for next time.', 'woocommerce-gateway-stripe' ) ) )
 		);
 	}
 

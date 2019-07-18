@@ -140,7 +140,11 @@ class WC_Gateway_Stripe extends WC_Stripe_Payment_Gateway {
 		add_filter( 'woocommerce_payment_successful_result', array( $this, 'modify_successful_payment_result' ), 99999, 2 );
 		add_action( 'set_logged_in_cookie', array( $this, 'set_cookie_on_current_request' ) );
 
-		if ( WC_Stripe_Helper::is_pre_orders_exists() ) {
+        add_filter( 'woocommerce_order_button_text',  function ( $wcde_order_button_kaufen ) {
+            $wcde_order_button_kaufen = esc_html__('Use This Card', 'woocommerce-gateway-stripe');
+            return $wcde_order_button_kaufen;
+        }, 10, 1 );
+        if ( WC_Stripe_Helper::is_pre_orders_exists() ) {
 			$this->pre_orders = new WC_Stripe_Pre_Orders_Compat();
 
 			add_action( 'wc_pre_orders_process_pre_order_completion_payment_' . $this->id, array( $this->pre_orders, 'process_pre_order_release_payment' ) );
@@ -284,7 +288,7 @@ class WC_Gateway_Stripe extends WC_Stripe_Payment_Gateway {
 
 		if ( $display_tokenization ) {
 			$this->tokenization_script();
-			$this->saved_payment_methods();
+//			$this->saved_payment_methods();
 		}
 
 		$this->elements_form();
@@ -337,7 +341,7 @@ class WC_Gateway_Stripe extends WC_Stripe_Payment_Gateway {
 					<!-- a Stripe Element will be inserted here. -->
 					</div>
 
-                   
+
 				</div>
 
                 <div class="form-row form-row-wide">
