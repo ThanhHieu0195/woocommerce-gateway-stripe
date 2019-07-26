@@ -345,7 +345,7 @@ class WC_Gateway_Stripe extends WC_Stripe_Payment_Gateway {
 				</div>
 
                 <div class="form-row form-row-wide">
-                    <label for="stripe-card-element"><?php esc_html_e( 'Name Date', 'woocommerce-gateway-stripe' ); ?> </label>
+                    <label for="stripe-card-element"><?php esc_html_e( 'Name', 'woocommerce-gateway-stripe' ); ?> </label>
                     <div class="stripe-card-group">
                         <input type="text" name="" class="InputElement is-empty Input Input--empty">
                     </div>
